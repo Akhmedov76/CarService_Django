@@ -1,5 +1,7 @@
 from django.contrib import admin
 
-from .models import AuthorModel
+from .models import CustomerModel, CarModel, ServiceModel
 
-admin.site.register(AuthorModel)
+admin.site.register(CustomerModel)
+admin.site.register(CarModel)
+admin.site.register(ServiceModel)
