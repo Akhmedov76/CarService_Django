@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
+from .models import Service
+
 
 def home_page_view(request):
-    return render(request, 'index.html')
+    services = Service.objects.all()  # Fetch all services if needed
+    return render(request, 'index.html', {'services': services})
 
 
 def about_page_view(request):
@@ -31,3 +34,8 @@ def testimonial_page_view(request):
 
 def error_page_view(request):
     return render(request, '404.html')
+
+
+def about_us(request):
+    services = Service.objects.all()  # Fetch all services if needed
+    return render(request, 'index.html', {'services': services})
