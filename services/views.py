@@ -1,15 +1,16 @@
 from django.shortcuts import render
 
-from .models import AboutModel, BannersModel
+from .models import AboutModel, BannersModel, ServicesModel
 
 
 def home_page_view(request):
-    services = AboutModel.objects.all()
+    about = AboutModel.objects.all()
     banners = BannersModel.objects.all()
+    services = ServicesModel.objects.all()
     context = {
-        'services': services,
+        'about': about,
         'banners': banners,
-    }
+        'services': services, }
     return render(request, 'index.html', context)
 
 
