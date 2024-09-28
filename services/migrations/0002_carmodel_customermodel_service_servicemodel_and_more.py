@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cars', '0001_initial'),
+        ('services', '0001_initial'),
     ]
 
     operations = [
@@ -70,11 +70,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='carmodel',
             name='customer',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cars.customermodel'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='services.customermodel'),
         ),
         migrations.AddField(
             model_name='servicemodel',
             name='car',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cars.carmodel'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='services.carmodel'),
         ),
     ]

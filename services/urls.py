@@ -1,6 +1,6 @@
 from django.urls import path
 
-from cars.views import home_page_view, about_page_view, booking_page_view, contact_page_view, service_page_view, \
+from services.views import home_page_view, about_page_view, booking_page_view, contact_page_view, service_page_view, \
     team_page_view, testimonial_page_view, error_page_view
 
 urlpatterns = [
