@@ -173,7 +173,7 @@
                         {% for service in services %}
                             <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4
                             {% if forloop.first %}active {% endif %}"
-                                    data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                                    data-bs-toggle="pill" data-bs-target="#tab-pane-{{ forloop.counter }}" type="button">
                                 <i class="fa fa-car-side fa-2x me-3"></i>
                                 <h4 class="m-0">{{ service.name }}</h4>
                             </button>
@@ -189,7 +189,7 @@
                                     <div class="col-md-6" style="min-height: 350px;">
                                         <div class="position-relative h-100">
                                             <img class="position-absolute img-fluid w-100 h-100"
-                                                 src="{% static 'img/service-1.jpg' %}"
+                                                 src="{{ ser.image.url }}"
                                                  style="object-fit: cover;" alt="">
                                         </div>
                                     </div>
