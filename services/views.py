@@ -1,16 +1,23 @@
 from django.shortcuts import render
 
 from .models import AboutModel, BannersModel, ServicesModel
+from teams.models import MembersModel, TestimonialsModel
 
 
 def home_page_view(request):
     about = AboutModel.objects.all()
     banners = BannersModel.objects.all()
     services = ServicesModel.objects.all()
+    teams = MembersModel.objects.all()
+    testimonials = TestimonialsModel.objects.all()
+
     context = {
         'about': about,
         'banners': banners,
-        'services': services, }
+        'services': services,
+        'members': teams,
+        'testimonials': testimonials,
+    }
     return render(request, 'index.html', context)
 
 
@@ -31,6 +38,8 @@ def service_page_view(request):
 
 
 def team_page_view(request):
+    teams = MembersModel.objects.all()
+    context = {'teams': teams}
     return render(request, 'team.html')
 
 
