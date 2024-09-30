@@ -297,7 +297,7 @@
                                 </div>
                             </div>
                             <div class="bg-light text-center p-4">
-                                <h5 class="fw-bold mb-0">{{ member.full_name }}</h5>
+                                <h5 class="fw-bold mb-0">{{ member.first_name }}</h5>
                                 <small>{{ member.profession }}</small>
                             </div>
                         </div>
@@ -317,50 +317,17 @@
                 <h1 class="mb-5">Our Clients Say!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}"
-                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos.
-                            Clita erat ipsum et lorem et sit.</p>
+                {% for testimon in testimonials %}
+                    <div class="testimonial-item text-center">
+                        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{{ testimon.image.url }}"
+                             style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">{{ testimon.name }}</h5>
+                        <p>{{ testimon.profession }}</p>
+                        <div class="testimonial-text bg-light text-center p-4">
+                            <p class="mb-0">{{ testimon.message }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg' %}"
-                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos.
-                            Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}"
-                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos.
-                            Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg' %}"
-                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos.
-                            Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
